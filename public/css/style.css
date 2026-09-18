@@ -1,6 +1,9 @@
 :root {
-    --color-primary: #7471BC;
-    --color-primary-dark: #5A5892;
+    --color-primary: #494997;
+    --color-primary-dark: #5C4EB4;
+    --color-terciaty-light: #818CF8;
+    --color-terciaty-ulight: #E0E7FF;
+    --color-complementary: #A78BFA;
     --color-background: #FFFFFF;
 }
 
@@ -13,41 +16,102 @@ body {
     font-family: "Sora", sans-serif;
 }
 
+header,
+section,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+
+.burbujas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.burbuja {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.burbuja:nth-child(1) {
+    top: 10%;
+    left: 5%;
+}
+
+.burbuja:nth-child(2) {
+    top: 40%;
+    left: 80%;
+}
+
+.burbuja:nth-child(3) {
+    top: 25%;
+    left: 60%;
+}
+
+.burbuja:nth-child(4) {
+    top: 65%;
+    left: 15%;
+}
+
+.burbuja:nth-child(5) {
+    top: 69%;
+    left: 70%;
+}
+
+.burbuja:nth-child(6) {
+    top: 98%;
+    left: 40%;
+}
+
+
+
+
 header{
     width: 100%;
     height: 5rem;
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-primary);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0px 0.5rem;
 } 
 
+.cont_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 0.5rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
 header a {
-    width: 100%;
-    height: 5rem;
+    display: inline-block;
 }
 
 .logo_header {
-    width: 10%;
-    height: auto;
-    margin: 0 auto;
-    margin-left: 1.5rem;
+    display: block;
+    width: 2rem;
 }
 
 .hambruger_menu{
     width: 10%;
     height: auto;
-    margin: 0 2rem 0px auto;
+    margin: 0 0 0px auto;
 }
 
 
 
 
 .propuesta_valor {
-    width: 90%;
+    width: 100%;
     max-width: 500px;
-    margin: 1rem auto;
+    margin: 0 auto;
 }
 
 
@@ -65,7 +129,6 @@ h1{
     display: block;
     width: 100%;
     height: auto;
-    margin-top: 2rem;
 }
 
 .servicios_indigo{
@@ -85,12 +148,27 @@ h1{
     justify-content: center;
 
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 400;
-    padding: .4rem;
-    color: var(--color-primary-dark);
-    border: 2px solid var(--color-primary-dark);
+    padding: .8rem;
+    color: var(--color-background);
     border-radius: 10px;
+}
+
+.servicios_indigo a:nth-child(1) {
+    background-color: var(--color-primary);
+}
+
+.servicios_indigo a:nth-child(2) {
+    background-color: var(--color-primary-dark);
+}
+
+.servicios_indigo a:nth-child(3) {
+    background-color: #B9B8DD;
+}
+
+.servicios_indigo a:nth-child(4) {
+    background-color: #B9B8DD;
 }
 
 
@@ -237,7 +315,7 @@ h1{
     align-items: center;
     text-align: center;
     padding: 5% 3% 5% 3%;
-    
+    background-color: var(--color-terciaty-ulight);
 }
 
 .tarjetas h3 {
@@ -251,7 +329,7 @@ h1{
     text-decoration: none;
     width: 50%;
     color: var(--color-background);
-    background-color: #5A5892;
+    background-color: var(--color-primary);
     border-radius: 10px;
 }
 
@@ -280,7 +358,7 @@ h1{
 
 
 .f0 {
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-primary);
     height: auto;
     aspect-ratio: 1 / 1;
     width: 100%;
@@ -356,7 +434,7 @@ h1{
 }
 
 footer {
-    background-color: #5A5892;
+    background-color: var(--color-primary);
     color: var(--color-background);
     font-weight: 200;
     width: 100%;
@@ -382,8 +460,12 @@ footer a {
 }
 
 .logo_footer {
-    width: 35%;
+    width: 7rem;
     height: auto;
+}
+
+.cont_logof {
+    display: inline-block;
 }
 
 .cont_enlaces {
@@ -408,11 +490,44 @@ footer a {
     display: flex;
     flex-direction: row;
     gap: .5rem;
+    align-items: center;    
+}
+
+.footer_redes img{ 
+    width: 1.5rem;
+    height: auto;
+    
+}
+
+.footer_redes a {
+    display: inline-block;
 }
 
 
 
+.burbuja {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
 
+.grupo-1 {
+    width: 150px;
+    height: 150px;
+    background-color: #7471BC;
+}
+
+.grupo-2 {
+    width: 100px;
+    height: 100px;
+    background-color: #ACAAD7;
+}
+
+.grupo-3 {
+    width: 200px;
+    height: 200px;
+    background-color: #5A5892;
+}
 
 
 
