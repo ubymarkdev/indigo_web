@@ -12,22 +12,56 @@ const grupo1 = document.querySelectorAll(".grupo-1");
 const grupo2 = document.querySelectorAll(".grupo-2");
 const grupo3 = document.querySelectorAll(".grupo-3");
 
+const burbujas = [
+    ...grupo1,
+    ...grupo2,
+    ...grupo3
+];
+
+const posicionesIniciales = new Map();
+
+burbujas.forEach((burbuja) => {
+    posicionesIniciales.set(
+        burbuja,
+        burbuja.getBoundingClientRect().top
+    );
+});
+
+
 window.addEventListener("scroll", () => {
 
-    grupo1.forEach((burbuja) => {
-        burbuja.style.transform =
-            `translateY(${window.scrollY * 0.2}px)`;
-    });
+    const scroll = window.scrollY;
 
-    grupo2.forEach((burbuja) => {
-        burbuja.style.transform =
-            `translateY(${window.scrollY * 0.4}px)`;
-    });
+    burbujas.forEach((burbuja) => {
 
-    grupo3.forEach((burbuja) => {
+        let velocidad;
+
+        if (burbuja.classList.contains("grupo-1")) {
+            velocidad = 0.15;
+        }
+
+        if (burbuja.classList.contains("grupo-2")) {
+            velocidad = 0.35;
+        }
+
+        if (burbuja.classList.contains("grupo-3")) {
+            velocidad = 0.60;
+        }
+
+        const posicionInicial = posicionesIniciales.get(burbuja);
+
+        const alturaBurbuja = burbuja.offsetHeight;
+
+        const recorrido = window.innerHeight + alturaBurbuja;
+
+        const nuevaPosicion =
+            ((posicionInicial + scroll * velocidad) % recorrido + recorrido)
+            % recorrido;
+
+        const movimiento = nuevaPosicion - posicionInicial;
+
         burbuja.style.transform =
-            `translateY(${window.scrollY * 0.7}px)`;
+            `translateY(${movimiento}px)`;
     });
 
 });
-
